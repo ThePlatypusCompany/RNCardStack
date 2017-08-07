@@ -1,0 +1,3 @@
+rootProject.name = 'RNCardStack'
+
+include ':app'
