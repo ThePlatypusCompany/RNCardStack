@@ -22,8 +22,12 @@ export default class Card extends Component {
     this.panResponder = PanResponder.create({
       onMoveShouldSetResponderCapture: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
-      onPanResponderGrant: (e, gestureState) => {},
-      onPanResponderMove: Animated.event([]),
+      onPanResponderGrant: (e, gestureState) => {
+        this.state.pan.setValue({x: 0, y: 0});
+      },
+      onPanResponderMove: Animated.event([
+        null, {dx: this.state.pan.x, dy: this.state.pan.y}
+      ]),
       onPanResponderRelease: (e, {vx, vy}) => {}
     })
   }
