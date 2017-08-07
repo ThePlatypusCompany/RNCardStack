@@ -37,9 +37,17 @@ export default class Card extends Component {
     this.state.pan.y.removeAllListeners();
   }
 
+  getMainCardStyle() {
+    let {pan} = this.state;
+    return [
+      Styles.mainCard,
+      {transform: [{translateX: pan.x}, {translateY: pan.y}]}
+    ];
+  }
+
   render() {
     return (
-      <Animated.View {...this.panResponder.panHandlers}>
+      <Animated.View style={this.getMainCardStyle()} {...this.panResponder.panHandlers}>
         <View style={Styles.card}>
           <Image style={Styles.cardImage}/>
           <View style={Styles.cardText}>
