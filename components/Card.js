@@ -29,7 +29,12 @@ export default class Card extends Component {
         null, {dx: this.state.pan.x, dy: this.state.pan.y}
       ]),
       onPanResponderRelease: (e, {vx, vy}) => {}
-    })
+    });
+  }
+
+  componentWillUnmount() {
+    this.state.pan.x.removeAllListeners();
+    this.state.pan.y.removeAllListeners();
   }
 
   render() {
