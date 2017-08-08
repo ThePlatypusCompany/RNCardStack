@@ -34,7 +34,19 @@ export default class CardStack extends Component {
 
   render() {
     return (
-      <FlatList/>
+      <FlatList
+        style={Styles.cardContainer}
+        contentContainerStyle={Styles.cardStack}
+        data={this.state.users}
+        renderItem={({ item, index }) => (
+          <Card
+            {...item}
+            index={index}
+          />
+        )}
+        keyExtractor={(item) => item.login.username}
+        scrollEnabled={false}
+      />
     );
   }
 }
