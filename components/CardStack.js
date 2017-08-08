@@ -38,7 +38,7 @@ export default class CardStack extends Component {
         style={Styles.cardContainer}
         contentContainerStyle={Styles.cardStack}
         data={this.state.users}
-        renderItem={({ item, index }) => (
+        renderItem={({item, index}) => (
           <Card
             {...item}
             index={index}

@@ -52,13 +52,14 @@ export default class Card extends Component {
   }
 
   render() {
+    let {picture, name, email} = this.props;
     return (
       <Animated.View style={this.getMainCardStyle()} {...this.panResponder.panHandlers}>
         <View style={Styles.card}>
-          <Image style={Styles.cardImage}/>
+          <Image source={{uri: picture.large}} style={Styles.cardImage}/>
           <View style={Styles.cardText}>
-            <Text style={Styles.cardTextMain}>Name, Age</Text>
-            <Text style={Styles.cardTextSecondary}>Job Title and Employer</Text>
+            <Text style={Styles.cardTextMain}>{name.first} {name.last}</Text>
+            <Text style={Styles.cardTextSecondary}>{email}</Text>
           </View>
         </View>
       </Animated.View>
