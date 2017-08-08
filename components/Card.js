@@ -45,6 +45,9 @@ export default class Card extends Component {
     let {pan} = this.state;
     return [
       Styles.mainCard,
+      {position: 'absolute'},
+      {left: -175},
+      {top: -250},
       {transform: [{translateX: pan.x}, {translateY: pan.y},
       {rotate: pan.x.interpolate({inputRange: [-150, 0, 150], outputRange: ["-20deg", "0deg", "20deg"]})}]},
       {opacity: pan.x.interpolate({inputRange: [-150, 0, 150], outputRange: [0.5, 1, 0.5]})}
