@@ -29,9 +29,15 @@ export default class Card extends Component {
         null, {dx: this.state.pan.x, dy: this.state.pan.y}
       ]),
       onPanResponderRelease: (e, {vx, vy}) => {
-        Animated.spring(this.state.pan, {
-          toValue: 0,
-        }).start()
+        if (this.state.pan.x._value < -150) {
+          this.props.onSwipe(this.props.index)
+        } else if (this.state.pan.x._value > 150) {
+          this.props.onSwipe(this.props.index)
+        } else {
+          Animated.spring(this.state.pan, {
+            toValue: 0,
+          }).start()
+        }
       }
     });
   }
