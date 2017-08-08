@@ -16,6 +16,22 @@ export default class CardStack extends Component {
     };
   }
 
+  componentWillMount() {
+    this.handleAdd();
+  }
+
+  async handleAdd() {
+    try {
+      let response = await fetch('https://randomuser.me/api');
+      let result = await response.json();
+      this.setState({
+        users: [result.results[0], ...this.state.users],
+      });
+    } catch (err) {
+      alert(JSON.stringify(err));
+    }
+  };
+
   render() {
     return (
       <FlatList/>
