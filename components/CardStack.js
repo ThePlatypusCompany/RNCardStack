@@ -53,6 +53,7 @@ export default class CardStack extends Component {
           <Card
             {...item}
             index={index}
+            onSwipe={this.handleRemove}
           />
         )}
         keyExtractor={(item) => item.login.username}
