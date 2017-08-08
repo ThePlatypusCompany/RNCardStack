@@ -28,7 +28,11 @@ export default class Card extends Component {
       onPanResponderMove: Animated.event([
         null, {dx: this.state.pan.x, dy: this.state.pan.y}
       ]),
-      onPanResponderRelease: (e, {vx, vy}) => {}
+      onPanResponderRelease: (e, {vx, vy}) => {
+        Animated.spring(this.state.pan, {
+          toValue: 0,
+        }).start()
+      }
     });
   }
 
