@@ -6,13 +6,13 @@ import {
   View
 } from 'react-native';
 import Styles from './Styles.js';
-import Card from './Card.js';
+import CardStack from './CardStack.js';
 
 export default class RNCardStack extends Component {
   render() {
     return (
       <View style={Styles.container}>
-        <Card/>
+        <CardStack/>
       </View>
     );
   }

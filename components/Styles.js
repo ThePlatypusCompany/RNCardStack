@@ -1,5 +1,7 @@
 'use strict';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const DIMENSIONS = Dimensions.get('window');
 
 const Styles = StyleSheet.create({
   container: {
@@ -8,10 +10,14 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  cardContainer: {
+    flex: 1,
+    width: DIMENSIONS.width
+  },
+  cardStack: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   card: {
     height: 500,
