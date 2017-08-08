@@ -17,7 +17,9 @@ export default class CardStack extends Component {
   }
 
   componentWillMount() {
-    this.handleAdd();
+    for(let i = 0; i < 3; i++){
+      this.handleAdd();
+    }
   }
 
   async handleAdd() {
