@@ -34,6 +34,15 @@ export default class CardStack extends Component {
     }
   };
 
+  handleRemove = (index) => {
+    let start = this.state.users.slice(0, index);
+    let end = this.state.users.slice(index + 1);
+    this.setState({
+      users: start.concat(end),
+    });
+    this.handleAdd();
+  };
+
   render() {
     return (
       <FlatList
