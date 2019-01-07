@@ -1,5 +1,5 @@
 # RNCardStack
 
-Card Swipe application built in React Native from http://platypus.is/posts/7
+Card Swipe application built in React Native from https://medium.com/@_platypus_/react-native-swipe-cards-ebc834fbb617.
 
-Check out our other Platyposts at http://platypus.is/posts.
+Check out our other Platyposts at https://medium.com/@_platypus_.
